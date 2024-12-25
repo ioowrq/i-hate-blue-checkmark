@@ -189,7 +189,8 @@ func updateProfileImage(creds Credentials) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		log.Fatalf("Update failed: %s", resp.Status)
+		fmt.Printf("Update failed: %s", resp.Status)
+		return
 	}
 
 	fmt.Println("Profile image updated successfully!")
